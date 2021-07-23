@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+            <div class="row mt-10">
+                <div class="col-md-3">Name: {{ student.first_name }} {{ student.surname }} {{ student.other_name }}</div>
+                <div class="col-md-3">Gender: {{ student.gender }}</div>
+                <div class="col-md-3">Date of Birth: {{ student.dob }}</div>
+                <div class="col-md-3">State: {{ student.state}} </div>
+            </div>
+            <div class="row mt-10">
+                <div class="col-md-3">LGA: {{ student.lga }}</div>
+                <div class="col-md-3">Department: {{ student.department }}</div>
+                <div class="col-md-3">Course: {{ student.course_title }}</div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row mt-10">
+                <div class="col-md-3">Registration No.: {{ student.reg_no}} </div>
+                <div class="col-md-3">School: {{ student.school }}</div>
+                <div class="col-md-3">Reason For Leaving: {{ student.reason_for_leaving }}</div>
+                <div class="col-md-3"></div>
+            </div>
+            {% if action =='view' %}
+                <div class="row mt-20">
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <a href="{{ url_for('staffs.accept', id=student.id) }}" class="btn btn-info">Accept</a>
+                        <a href="{{ url_for('staffs.ignore', id=student.id) }}" class="btn btn-danger">Reject</a>
+                    </div>
+                    <div class="col-md-5"></div>
+                </div>
+            {% endif %}
+      </div>
+</div>
+{% endblock content %}

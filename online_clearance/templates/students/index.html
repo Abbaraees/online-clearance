@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <h4>Welcome to the Student Section</h4>
+                  <h5>{{ g.user.first_name}} {{ g.user.surname}}</h5>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+
+        <div class="btn-container">
+          <div class="row justify-content-center">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                  <a class="btn btn-outline-info" href="{{ url_for('students.status') }}">Check Status</a>
+                  <a class="btn btn-outline-danger" href="{{ url_for('students.cancel') }}">Cancel Request</a>
+                </div>
+             <div class="col-md-2"></div>
+
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock content %}

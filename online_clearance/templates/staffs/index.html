@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <h4>Welcome to the Staff Section</h4>
+                  <h5>{{ g.user.first_name}} {{ g.user.surname}}</h5>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+
+        <div class="btn-container">
+          <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="">
+                      <a href="{{ url_for('staffs.new_requests') }}" class="btn btn-primary">New Requests</a></li>
+                      <a href="{{ url_for('staffs.accepted_requests') }}" class="btn btn-success">Accepted Requests</a></li>
+                      <a href="{{ url_for('staffs.rejected_requests') }}" class="btn btn-danger">Rejected Requests</a></li>
+                    </div>                    
+                </div>
+             <div class="col-md-2"></div>
+
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock content %}

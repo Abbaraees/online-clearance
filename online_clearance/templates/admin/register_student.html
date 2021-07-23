@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <h4>{{ title }}</h4>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+
+        <div class="btn-container">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.first_name.label }}
+                        {{ form.first_name(class="form-control form-control-md", value=student.first_name if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.surname.label }}
+                        {{ form.surname(class="form-control form-control-md", value=student.surname if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.other_name.label }}
+                        {{ form.other_name(class="form-control form-control-md", value=student.other_name if student else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.dob.label }}
+                        {{ form.dob(class="form-control form-control-md", type="date") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.state.label }}
+                        {{ form.state(class="form-control form-control-md", value=student.state if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.lga.label }}
+                        {{ form.lga(class="form-control form-control-md", value=student.lga if student else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.reg_no.label }}
+                        {{ form.reg_no(class="form-control form-control-md", value=student.reg_no if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.department.label }}
+                        {{ form.department(class="form-control form-control-md", value=student.department if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.course_title.label }}
+                        {{ form.course_title(class="form-control form-control-md", value=student.course_title if student else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.school.label }}
+                        {{ form.school(class="form-control form-control-md", value=student.school if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.level.label }}
+                        {{ form.level(class="form-control form-control-md", value=student.level if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.reason_for_leaving.label }}
+                        {{ form.reason_for_leaving(class="form-control form-control-md", value=student.reason_for_leaving if student else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.gender.label }}
+                        {{ form.gender(class="form-control form-control-md", value=student.gender if student else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.password.label }}
+                        {{ form.password(class="form-control form-control") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group"></div>
+                    <div class="col-md-4 form-group">
+                        <button class="btn btn-info" type="submit">SUBMIT</button>
+                    </div>
+                    <div class="col-md-4 form-group"></div>
+                </div>
+
+            </form>
+        </div>
+      </div>
+</div>
+{% endblock content %}

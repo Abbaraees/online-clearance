@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+        <a href="{{ url_for('admin.register') }}" class="btn btn-outline-info mt-10">Add New Admin</a>
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <h4>Welcome to the Admin Section</h4>
+                  <h5>{{ g.user.first_name}} {{ g.user.surname}}</h5>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+
+        <div class="btn-container">
+          <div class="row">
+            <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="">
+                      <a href="{{ url_for('admin.staffs') }}" class="btn btn-outline-success">Staffs Section</a>
+                      <a href="{{ url_for('admin.students') }}" class="btn btn-outline-success">Students Section</a>
+                    </div>                    
+                </div>
+             <div class="col-md-4"></div>
+
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock content %}

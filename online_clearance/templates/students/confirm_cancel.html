@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+        <div class="btn-container">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h3>ARE YOU SURE?</h5>
+                <form action="" method="POST">
+                    <button type="submit" class="btn btn-outline-danger">Yes, Cancel Request</button>
+                    <a href="{{ url_for('students.index') }}" class="btn btn-outline-info">No</a>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+        </div>
+      </div>
+</div>
+{% endblock content %}

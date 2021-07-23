@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+    <form method="POST" action="">
+        {{ form.csrf_token }}
+        {{ form.username.label }}: {{ form.username }}
+        {% if form.username.errors %}
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        {% endif %}
+        {{ form.password.label }}: {{ form.password }}
+        {{ form.login }}
+    </form>
+</body>
+</html>
+

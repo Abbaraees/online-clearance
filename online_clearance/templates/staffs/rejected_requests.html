@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+            <h1>Rejected Requests</h1>
+            {% if rejected_requests %}
+                <ul>
+                    {% for student in rejected_requests %}
+                    <li><a href="{{ url_for('staffs.student_info', id=student.id) }}">{{student.first_name}} {{student.surname}}</a></li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h3>You don't have any Rejected request</h3>
+            {% endif %}
+      </div>
+</div>
+{% endblock content %}

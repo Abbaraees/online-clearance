@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <h4>{{ title }}</h4>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+        <div class="btn-container">
+            <form method="POST" action="">
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.first_name.label }}
+                        {{ form.first_name(class="form-control form-control-md", value=staff.first_name if staff else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.surname.label }}
+                        {{ form.surname(class="form-control form-control-md", value=staff.surname if staff else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.other_name.label }}
+                        {{ form.other_name(class="form-control form-control-md", value=staff.other_name if staff else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.dob.label }}
+                        {{ form.dob(class="form-control form-control-md", type="date") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.state.label }}
+                        {{ form.state(class="form-control form-control-md", value=staff.state if staff else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.lga.label }}
+                        {{ form.lga(class="form-control form-control-md", value=staff.lga if staff else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.staff_no.label }}
+                        {{ form.staff_no(class="form-control form-control-md", value=staff.staff_no if staff else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.department.label }}
+                        {{ form.department(class="form-control form-control-md", value=staff.department if staff else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.role.label }}
+                        {{ form.role(class="form-control form-control-md", value=staff.role if staff else "") }}
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group">
+                        {{ form.gender.label }}
+                        {{ form.gender(class="form-control form-control-md", value=staff.gender if staff else "") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                        {{ form.password.label }}
+                        {{ form.password(class="form-control form-control") }}
+                    </div>
+                    <div class="col-md-4 form-group">
+                    </div>
+                </div>
+                <div class="row justify-content-left">
+                    <div class="col-md-4 form-group"></div>
+                    <div class="col-md-4 form-group">
+                        <button class="btn btn-info" type="submit">SUBMIT</button>
+                    </div>
+                    <div class="col-md-4 form-group"></div>
+                </div>
+
+            </form>
+        </div>
+      </div>
+</div>
+{% endblock content %}

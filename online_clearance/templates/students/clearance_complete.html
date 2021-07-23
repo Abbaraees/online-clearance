@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+        <div class="btn-container" id="clearance">
+          <div>
+            <div class="row pt-1">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <center>
+                  <u><h4>CLEARANCE NOTIFICATION SLIP</h4></u>
+                </center>
+              </div>
+              <div class="col-md-2"></div>
+            </div>
+
+            <div class="row mt-5">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">
+                REGISTRATION NUMBER <p></p>
+              </div>
+              <div class="col-md-2">{{ student.reg_no}}</div>
+              <div class="col-md-2"></div>
+              <div class="col-md-2">Course: </div>
+              <div class="col-md-2">{{ student.course_title}}</div>
+              <div class="col-md-1"></div>
+
+            </div>
+
+            <div class="row mt-5">
+              <div class="col-md-1"></div>
+              <div class="col-md-2">
+                Name <p></p>
+              </div>
+              <div class="col-md-2">{{ student.first_name}} {{ student.surname }}</div>
+              <div class="col-md-2"></div>
+              <div class="col-md-2">DEPARTMENT: <p></p></div>
+              <div class="col-md-2">{{ student.department}}</div>
+              <div class="col-md-1"></div>
+
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-1"></div>
+              <div class="col-md-10">
+                <p>This is to certify that <b>{{ student.first_name}} {{ student.surname }}</b> Has Successfully done his/her clearance in all the respective offices and departments.
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+          </div>
+        </div>
+          <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <center>
+            <button class="btn btn-info align-center" onclick=window.print()>Print slip</button>
+          </center>
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+      </div>
+</div>
+{% endblock content %}

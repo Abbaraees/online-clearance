@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="site-blocks-cover container-fluid">
+      <div class="student-info">
+            <h1>Staffs</h1>
+            <a href="{{ url_for('admin.new_staff') }}" class="btn btn-outline-success mt-10">Add New Staff</a>
+            {% if staffs %}
+                {% for staff in staffs.items %}
+                    <div class="row py-10">
+                        <div class="col-md-4 ">
+                            <a href="{{ url_for('admin.staff_info', id=staff.id) }}">{{staff.first_name}} {{staff.surname}}</a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{ url_for('admin.staff_info', id=staff.id) }}" class="btn btn-outline-info mt-10">View Info</a>
+                            <a href="{{ url_for('admin.update_staff_info', id=staff.id) }}" class="btn btn-outline-warning">Update Info</a>
+                            <a href="{{ url_for('admin.delete_staff', id=staff.id) }}" class="btn btn-outline-danger">Delete</a>                  
+                        </div>
+                    </div>
+                    <div class="row"></div>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-md-2">
+                        {% if staffs.has_prev %}
+                            <a href="{{ url_for('admin.staffs', page=staffs.prev_num)}}" class="btn btn-info">Previous</a>
+                        {% endif %}
+                        
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
+                        {% if staffs.has_next %}
+                            <a href="{{ url_for('admin.staffs', page=staffs.next_num) }}"class="btn btn-info">Next</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <h3>There are no staffs registered yet!</h3>
+            {% endif %}
+      </div>
+</div>
+{% endblock content %}
